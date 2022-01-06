@@ -1,3 +1,5 @@
+// Decimal to Binary
+
 #include<iostream>
 #include<cmath>
 using namespace std;
