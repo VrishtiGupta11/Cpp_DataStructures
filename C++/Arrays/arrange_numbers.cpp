@@ -68,6 +68,17 @@ int main(){
     {
         int N, arr[100], count = 1;
         cin>>N;
+        for(int i=0, j=N-1; i<N/2 || j>=N/2; i++, j--){
+            if(i==j){
+                arr[i] = count;
+                break;
+            }
+            arr[i] = count;
+            count++;
+            arr[j] = count;
+            count++;
+        }
+        /*
         if(N%2 != 0){
             for(int i=0, j=N-1; i<N/2 || j>=N/2; i++, j--){
                 if(i==j){
@@ -89,6 +100,7 @@ int main(){
                 count++;
             }
         }
+        */
         for(int i=0; i<N; i++){
             cout<<arr[i]<<" ";
         }
