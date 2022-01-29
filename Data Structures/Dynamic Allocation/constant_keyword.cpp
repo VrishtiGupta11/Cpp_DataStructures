@@ -30,7 +30,7 @@ int main() {
 
     int *const p3 = &i2;  // p3 is a constant pointer pointing to an integer.
     // p3++; // Not allowed
-    // *(p3)++; // Not allowed
+    (*p3)++; // allowed
 
     int const * const p4 = &i2;
     // p4++; // Not allowed
