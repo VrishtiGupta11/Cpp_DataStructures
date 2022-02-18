@@ -25,7 +25,7 @@ void MergeSort(int arr[], int l, int h) {
     int mid = (l+h)/2;
     MergeSort(arr, l, mid);
     MergeSort(arr, mid+1, h);
-    Merge(arr, mid-l+1, h+1);
+    Merge(arr, mid+1, h+1);
 }
 
 int main() {
