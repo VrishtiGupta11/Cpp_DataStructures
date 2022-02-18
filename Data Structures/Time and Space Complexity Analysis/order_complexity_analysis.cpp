@@ -6,8 +6,7 @@ using namespace std;
 
 long getTimeInNanoSeconds() {
     struct timespec start;
-    if (timespec_get(&start, TIME_UTC) != TIME_UTC)
-    {
+    if (timespec_get(&start, TIME_UTC) != TIME_UTC) {
         fputs("timespec_get failed!", stderr);
     }
     return start.tv_nsec*1000000000 + start.tv_nsec;
@@ -37,7 +36,7 @@ void MergeSort(int arr[], int l, int h) {
     int mid = (l+h)/2;
     MergeSort(arr, l, mid);
     MergeSort(arr, mid+1, h);
-    Merge(arr, mid-l+1, h+1);
+    Merge(arr, mid+1, h+1);
 }
 
 int main() {
