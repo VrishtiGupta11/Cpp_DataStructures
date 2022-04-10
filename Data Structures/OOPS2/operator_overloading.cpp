@@ -47,19 +47,70 @@ class Fraction {
         bool operator==(Fraction const &f2) const {
             return this->numerator == f2.numerator && this->denominator == f2.denominator;
         }
+
+        // Overloading ++ operator (Pre-increment)
+        Fraction& operator++() {          // return type is Fraction reference in order to avoid copy i.e. work should not be done on buffer.
+            this->numerator += this->denominator;
+            simplify();
+            return *this;
+        }
+
+        // Overloading ++ operator (Post-increment)
+        Fraction operator++(int) {       // int is specified to tell that it is post increment operator.
+            Fraction fNew(this->numerator, this->denominator);
+            this->numerator += this->denominator;
+            simplify();
+            fNew.simplify();
+            return fNew;
+        }
+
+        // Overloading += operator (Post-increment)
+        Fraction& operator+=(Fraction const &f2) {
+            numerator = (f2.numerator*this->denominator) + (this->numerator*f2.denominator);
+            denominator = f2.denominator*this->denominator;
+            simplify();
+            return *this;
+        }
 };
 
 int main() {
-    Fraction f1(10, 2);
-    Fraction f2(15, 4);
+    Fraction f1(10, 3);
+    Fraction f2(5, 2);
     Fraction f3 = f1 + f2;
     Fraction f4 = f1 * f2;
+    cout << "Fraction 1" << endl;
     f1.print();
+    cout << "Fraction 2" << endl;
     f2.print();
+    cout << "f3 = f1 + f2" << endl;
     f3.print();
+    cout << "f4 = f1 * f2" << endl;
     f4.print();
+
     if(f1 == f2) 
         cout << "Equal" << endl;
     else
         cout << "Not equal" << endl;
+    
+    Fraction f5 = ++f1;
+    Fraction f6 = f2++;
+    cout << "f5 = ++f1" << endl;
+    cout << "Fraction 1" << endl;
+    f1.print();
+    cout << "Fraction 5" << endl;
+    f5.print();
+    cout << "f6 = f2++" << endl;
+    cout << "Fraction 2" << endl;
+    f2.print();
+    cout << "Fraction 6" << endl;
+    f6.print();
+
+    cout << "Fraction 1" << endl;
+    f1.print();
+    cout << "Fraction 2" << endl;
+    f2.print();
+    f1 += f2;
+    cout << "f1 += f2" << endl;
+    cout << "Fraction 1" << endl;
+    f1.print();
 }
