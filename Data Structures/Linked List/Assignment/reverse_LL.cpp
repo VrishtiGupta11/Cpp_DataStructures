@@ -10,7 +10,7 @@ void printReverseLL(Node* head) {
     cout << head -> data << " ";
 }
 
-// Actually reversing the original Linked List
+// Actually reversing the original Linked List using Iteration
 Node* reverseLL(Node* head) {
     if(head == NULL || head -> next == NULL) 
         return head;
