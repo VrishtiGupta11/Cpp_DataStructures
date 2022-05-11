@@ -3,11 +3,11 @@ using namespace std;
 #include "stack_array.cpp"
 
 int main() {
-    Stack s1;
-    int element;
+    Stack<char> s1;
+    char element;
     cout << "Enter elements to push: " << endl;
     cin >> element;
-    while(element != -1) {
+    while(element != '0') {
         s1.push(element);
         cin >> element;
     }
