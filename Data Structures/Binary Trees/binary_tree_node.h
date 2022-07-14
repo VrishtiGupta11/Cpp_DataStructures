@@ -79,6 +79,7 @@ BinaryTreeNode<T>* takeInputLevelWise() {
             q.push(child);
         }
     }
+    cout << endl;
     return root;
 }
 
