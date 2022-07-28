@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-void Merge(int arr1[], int N1, int N2) {
-    int arr[1000], i=0, j=N1, k=0;
-    while (i < N1 && j < N2) {
+void Merge(int arr1[], int l, int h, int mid) {
+    int arr[1000], i=l, j=mid+1, k=0;
+    while (i <= mid && j <= h) {
         if(arr1[i] < arr1[j])
             arr[k++] = arr1[i++];
         else
             arr[k++] = arr1[j++];
     }
-    while (i < N1) {
+    while (i <= mid) {
         arr[k++] = arr1[i++];
     }
-    while (j < N2) {
+    while (j <= h) {
         arr[k++] = arr1[j++];
     }
-    for(int i=0; i<k; i++)
-        arr1[i] = arr[i];
+    for(int i=l; i<=h; i++)
+        arr1[i] = arr[i-l];
 }
 
 void MergeSort(int arr[], int l, int h) {
@@ -25,7 +25,7 @@ void MergeSort(int arr[], int l, int h) {
     int mid = (l+h)/2;
     MergeSort(arr, l, mid);
     MergeSort(arr, mid+1, h);
-    Merge(arr, mid+1, h+1);
+    Merge(arr, l, h, mid);
 }
 
 int main() {
