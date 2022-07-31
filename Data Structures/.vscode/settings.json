@@ -8,6 +8,7 @@
         "deque": "cpp",
         "queue": "cpp",
         "vector": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "unordered_map": "cpp"
     }
 }
