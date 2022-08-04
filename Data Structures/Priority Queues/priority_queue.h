@@ -66,7 +66,7 @@ public:
             int minIndex = PI;
             if(pq[LCI] < pq[minIndex])
                 minIndex = LCI;
-            if(pq[RCI] < pq[minIndex])
+            if(RCI < pq.size() && pq[RCI] < pq[minIndex])
                 minIndex = RCI;
             if(minIndex == PI)
                 break;
