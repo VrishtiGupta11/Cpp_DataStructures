@@ -25,7 +25,12 @@ int knapsack1(int i, int W, vector<int> &wt, vector<int> &val, vector<vector<int
 int knapsack2(int N, int W, vector<int> &wt, vector<int> &val) {
     vector<vector<int>> dp(N, vector<int>(W+1, 0));
 
-    dp[0][wt[0]] = val[0];
+    for(int j=0; j<=W; j++) {
+        if(wt[0] <= j) {
+            dp[0][j] = val[0];
+        }
+    }
+    
     for(int i=1; i<N; i++) {
         for(int j=1; j<=W; j++) {
             int pick = -1e9;
