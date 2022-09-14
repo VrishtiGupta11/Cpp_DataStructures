@@ -6,9 +6,9 @@ void isConnected(int N, int sv, vector<vector<int>> &edges, vector<int> &visited
     if(N == 0) return;
     
     visited[sv] = 1;
-    cout << ">>> isConnected1" << endl;
+    // cout << ">>> isConnected1" << endl;
     for(int i=0; i<N; i++) {
-        cout << ">>> isConnected2" << endl;
+        // cout << ">>> isConnected2" << endl;
         if(edges[sv][i] && !visited[i]) {
             isConnected(N, i, edges, visited);
         }
@@ -28,9 +28,9 @@ int main() {
     }
 
     vector<int> visited(n, 0);
-    cout << ">>> Main1" << endl;
+    // cout << ">>> Main1" << endl;
     isConnected(n, 0, edges, visited);
-    cout << ">>> Main2" << endl;
+    // cout << ">>> Main2" << endl;
     int i=0;
     for(; i<n; i++) {
         if(visited[i] == 0) {
