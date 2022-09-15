@@ -11,6 +11,7 @@
         "xutility": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "algorithm": "cpp"
     }
 }
