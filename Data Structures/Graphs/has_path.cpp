@@ -11,7 +11,7 @@ bool hasPath(int N, vector<vector<int>> &edges, int sv, int ev, vector<int> &vis
     for(; i<N; i++) {
         if(edges[sv][i] == 1 && !visited[i]) {
             bool ans = hasPath(N, edges, i, ev, visited);
-            return ans;
+            if(ans) return ans;
         }
     }
     if(i == N) return false;
