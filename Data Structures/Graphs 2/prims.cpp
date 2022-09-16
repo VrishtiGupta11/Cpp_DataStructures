@@ -4,19 +4,6 @@
 #include <vector>
 using namespace std;
 
-class Edge {
-public:
-    int source;
-    int dest;
-    int weight;
-    Edge() {}
-    Edge(int source, int dest, int weight) : source(source), dest(dest), weight(weight) {}
-};
-
-bool compare(int a, int b) {
-    return a < b;
-}
-
 int getMinVertex(int weights[], bool visited[], int n) {
     int minVertex = n;
     int minWeight = INT_MAX;
@@ -33,7 +20,7 @@ void prims(int n, vector<vector<int>> &edges) {
     int* parent = new int[n];
     int* weights = new int[n];
     bool* visited = new bool[n];
-    sort(weights, weights+n, compare);
+
     for(int i=0; i<n; i++) {
         if(i == 0) {
             weights[i] = 0;
@@ -43,6 +30,7 @@ void prims(int n, vector<vector<int>> &edges) {
         weights[i] = INT_MAX;
         visited[i] = false;
     }
+    
     for(int i=0; i<n; i++) {
         int minVertex = getMinVertex(weights, visited, n);
         visited[minVertex] = true;
