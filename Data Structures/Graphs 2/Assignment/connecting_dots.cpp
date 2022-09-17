@@ -5,6 +5,7 @@ using namespace std;
 int counter = 0;
 
 bool solve(int i, int j, int si, int sj, int n, int m, vector<vector<char>> &grid, vector<vector<int>> &visited, char color) {
+    // If there are atleast 4 color dots and if we are able to reach to starting index, i.e. a cycle of same colors then return true
     if(counter >= 4 && (i==si-1 || j == sj-1 || i==si+1 || j == sj+1)) return true;
     counter++;
     visited[i][j] = 1;
