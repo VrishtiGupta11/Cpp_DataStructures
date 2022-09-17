@@ -12,6 +12,7 @@
         "unordered_map": "cpp",
         "utility": "cpp",
         "cmath": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "xlocale": "cpp"
     }
 }
